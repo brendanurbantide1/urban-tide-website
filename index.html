@@ -3,25 +3,27 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Urban Tide Plumbing — Melbourne's 24/7 Emergency Plumbers. On your doorstep in 45 minutes or $50 off.</title>
-<meta name="description" content="Melbourne's most-booked emergency plumbing team. 45-minute arrival guaranteed. Licensed, insured, gas-safe certified. $0 call-out fee. Fixed pricing up front." />
+<title>Urban Tide Plumbing — Melbourne's plumbing partner for property managers</title>
+<meta name="description" content="The plumbing partner Melbourne property managers actually call back. Photo job reports, direct billing to the agency, 45-minute emergency response, full compliance — handled." />
+<meta name="theme-color" content="#02060f" />
+<link rel="icon" type="image/jpeg" href="logo.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --ink:#000309;
-  --steel:#05080f;
-  --slate:#0a1220;
-  --paper:#eef2f8;
-  --cream:#f4f7fb;
-  --line:rgba(255,255,255,.08);
-  --line-dk:rgba(0,3,9,.1);
-  --red:#1f6bff;
-  --red-dk:#0d4fd1;
-  --amber:#4ea8ff;
-  --gold:#7ec4ff;
-  --ok:#29c16d;
+  --void:#000000;
+  --ink:#02060f;
+  --abyss:#04091a;
+  --deep:#071229;
+  --slate:#0c1d3a;
+  --tide:#0e5fa0;
+  --wave:#1a8cd8;
+  --crest:#3fb6ef;
+  --foam:#9ee0f7;
+  --paper:#ffffff;
+  --line:rgba(159,224,247,.10);
+  --line-soft:rgba(159,224,247,.06);
   --sans:"Inter Tight",system-ui,-apple-system,sans-serif;
   --serif:"Instrument Serif",ui-serif,Georgia,serif;
   --ease:cubic-bezier(.22,1,.36,1);
@@ -29,8 +31,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  background:var(--cream);color:var(--ink);
-  font-family:var(--sans);font-size:16px;line-height:1.5;font-weight:400;
+  background:var(--void);color:#fff;
+  font-family:var(--sans);font-size:16px;line-height:1.55;font-weight:400;
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
   overflow-x:hidden;
 }
@@ -39,85 +41,105 @@ a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .wrap{width:min(1320px,94vw);margin:0 auto}
 
-/* ─── emergency bar ─── */
-.ebar{
-  background:var(--red);color:#fff;padding:11px 0;font-size:14px;font-weight:500;
-  position:relative;z-index:50;
+/* ─── top bar ─── */
+.tbar{
+  background:linear-gradient(90deg,var(--tide) 0%,var(--wave) 50%,var(--tide) 100%);
+  color:#fff;padding:10px 0;font-size:13.5px;font-weight:500;
+  position:relative;z-index:50;letter-spacing:.005em;
 }
-.ebar .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
-.ebar-left{display:flex;gap:22px;align-items:center}
-.ebar-left span{display:flex;align-items:center;gap:8px}
-.dot{width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.7);animation:pulse 1.6s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
-.ebar a.phone{font-weight:700;font-size:15px;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:8px}
-.ebar a.phone:hover{text-decoration:underline;text-underline-offset:3px}
+.tbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.tbar-left{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.tbar-left span{display:flex;align-items:center;gap:8px}
+.tbar-left svg{width:14px;height:14px;opacity:.85}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--foam);box-shadow:0 0 0 0 rgba(158,224,247,.7);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(158,224,247,0)}100%{box-shadow:0 0 0 0 rgba(158,224,247,0)}}
+.tbar a.phone{font-weight:700;font-size:14.5px;letter-spacing:-.005em;display:inline-flex;align-items:center;gap:8px}
+.tbar a.phone:hover{text-decoration:underline;text-underline-offset:3px}
 
 /* ─── nav ─── */
 nav.main{
-  position:absolute;top:41px;left:0;right:0;z-index:40;
-  padding:24px 0;
+  position:absolute;top:38px;left:0;right:0;z-index:40;
+  padding:22px 0;
 }
 nav.main.stuck{
-  position:fixed;top:0;background:rgba(6,17,26,.92);backdrop-filter:blur(14px);
-  padding:16px 0;animation:slideDown .4s var(--ease);
+  position:fixed;top:0;background:rgba(2,6,15,.85);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line-soft);
+  padding:14px 0;animation:slideDown .4s var(--ease);
 }
 @keyframes slideDown{from{transform:translateY(-100%)}}
 nav.main .wrap{display:flex;align-items:center;justify-content:space-between;gap:40px}
-.logo{display:flex;align-items:center;gap:12px;color:#fff}
-.logo-mark{
-  width:42px;height:42px;border-radius:10px;
-  background:linear-gradient(135deg,var(--red) 0%,var(--amber) 100%);
-  display:grid;place-items:center;flex-shrink:0;
-  box-shadow:0 6px 20px -4px rgba(31,107,255,.55);
+.logo{display:flex;align-items:center;gap:14px;color:#fff}
+.logo img{
+  width:54px;height:54px;border-radius:12px;object-fit:cover;
+  background:#fff;padding:4px;
+  box-shadow:0 8px 28px -8px rgba(63,182,239,.5),0 0 0 1px rgba(159,224,247,.2);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease);
 }
-.logo-mark svg{width:22px;height:22px;stroke:#fff}
-.logo-txt{font-family:var(--sans);font-weight:700;font-size:20px;letter-spacing:-.02em;line-height:1}
-.logo-txt small{display:block;font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;opacity:.65;margin-top:5px;font-family:var(--sans)}
-.nav-links{display:flex;gap:36px;font-size:15px;font-weight:500;color:#fff}
-.nav-links a{opacity:.85;transition:opacity .2s}
-.nav-links a:hover{opacity:1}
+.logo:hover img{transform:translateY(-2px) scale(1.03);box-shadow:0 14px 38px -8px rgba(63,182,239,.7),0 0 0 1px rgba(159,224,247,.35)}
+.logo-txt{font-family:var(--sans);font-weight:800;font-size:20px;letter-spacing:-.02em;line-height:1}
+.logo-txt small{display:block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;opacity:.6;margin-top:6px;color:var(--foam)}
+.nav-links{display:flex;gap:34px;font-size:14.5px;font-weight:500;color:#fff}
+.nav-links a{opacity:.8;transition:opacity .2s,color .2s}
+.nav-links a:hover{opacity:1;color:var(--crest)}
 .nav-cta{
-  background:var(--red);color:#fff;padding:12px 22px;border-radius:10px;
-  font-weight:600;font-size:14.5px;display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(180deg,var(--wave),var(--tide));color:#fff;padding:13px 22px;border-radius:11px;
+  font-weight:600;font-size:14.5px;display:inline-flex;align-items:center;gap:9px;
   transition:all .3s var(--ease);
-  box-shadow:0 6px 20px -4px rgba(31,107,255,.45);
+  box-shadow:0 8px 24px -6px rgba(26,140,216,.55),inset 0 1px 0 rgba(255,255,255,.18);
 }
-.nav-cta:hover{background:var(--red-dk);transform:translateY(-2px)}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 14px 32px -6px rgba(26,140,216,.7),inset 0 1px 0 rgba(255,255,255,.25)}
 .nav-cta svg{width:15px;height:15px}
 
 /* ─── HERO ─── */
 .hero{
-  position:relative;min-height:92vh;color:#fff;overflow:hidden;
-  padding:200px 0 100px;
+  position:relative;min-height:100vh;color:#fff;overflow:hidden;
+  padding:200px 0 140px;
   background:
-    linear-gradient(180deg,rgba(0,3,9,.72) 0%,rgba(0,3,9,.92) 70%,var(--ink) 100%),
-    url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=2400&q=80") center/cover no-repeat,
-    var(--ink);
+    radial-gradient(ellipse at 75% 20%,rgba(26,140,216,.22) 0%,transparent 55%),
+    radial-gradient(ellipse at 10% 80%,rgba(14,95,160,.28) 0%,transparent 50%),
+    linear-gradient(180deg,var(--ink) 0%,var(--abyss) 60%,var(--void) 100%);
 }
-.hero::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse at 20% 30%,rgba(78,168,255,.12) 0%,transparent 55%),
-    radial-gradient(ellipse at 85% 75%,rgba(31,107,255,.18) 0%,transparent 50%);
+/* big wave SVG ─ the hero piece */
+.hero-wave{
+  position:absolute;inset:0;pointer-events:none;z-index:1;
+  display:flex;align-items:center;justify-content:center;
+  opacity:.95;
 }
+.hero-wave svg{
+  width:140%;max-width:none;height:auto;
+  filter:drop-shadow(0 30px 80px rgba(26,140,216,.45)) drop-shadow(0 0 60px rgba(63,182,239,.25));
+  animation:waveFloat 9s ease-in-out infinite;
+}
+@keyframes waveFloat{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-18px) scale(1.015)}
+}
+.hero-wave .crest-line{
+  fill:none;stroke:url(#waveGrad);stroke-width:2.5;opacity:.55;
+  stroke-dasharray:2400;stroke-dashoffset:2400;
+  animation:drawWave 3.5s var(--ease) .6s forwards;
+}
+@keyframes drawWave{to{stroke-dashoffset:0}}
+
 .hero-grid{
-  position:relative;z-index:2;
-  display:grid;grid-template-columns:1.3fr .7fr;gap:60px;align-items:end;
+  position:relative;z-index:3;
+  display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:end;
 }
 
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:10px;
-  padding:8px 14px 8px 10px;
-  background:rgba(31,107,255,.12);border:1px solid rgba(31,107,255,.35);
-  border-radius:999px;font-size:13px;font-weight:500;letter-spacing:.01em;
-  color:#ffc7bb;margin-bottom:36px;
+  padding:8px 16px 8px 12px;
+  background:rgba(63,182,239,.08);border:1px solid rgba(63,182,239,.3);
+  border-radius:999px;font-size:12.5px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--foam);margin-bottom:32px;
   animation:fadeUp .7s var(--ease) both;
 }
-.hero-eyebrow .dot{background:var(--red);box-shadow:0 0 0 0 rgba(31,107,255,.7)}
+.hero-eyebrow .dot{background:var(--crest);box-shadow:0 0 0 0 rgba(63,182,239,.7)}
 
 h1.htitle{
-  font-weight:700;font-size:clamp(52px,7.5vw,120px);line-height:.92;letter-spacing:-.045em;
-  margin-bottom:30px;max-width:14ch;
+  font-weight:700;font-size:clamp(48px,7vw,108px);line-height:.95;letter-spacing:-.045em;
+  margin-bottom:28px;max-width:16ch;
 }
 h1.htitle .line{display:block;overflow:hidden;padding-bottom:.05em}
 h1.htitle .line > span{display:block;transform:translateY(120%);animation:rise 1s var(--ease) forwards}
@@ -127,12 +149,14 @@ h1.htitle .line:nth-child(3) > span{animation-delay:.45s}
 @keyframes rise{to{transform:translateY(0)}}
 h1.htitle em{
   font-family:var(--serif);font-style:italic;font-weight:400;
-  color:var(--amber);letter-spacing:-.02em;padding-right:.1em;
+  background:linear-gradient(90deg,var(--crest),var(--foam));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  letter-spacing:-.02em;padding-right:.1em;
 }
 
 .hero-sub{
-  font-size:clamp(18px,1.5vw,22px);line-height:1.45;color:rgba(255,255,255,.78);
-  max-width:540px;margin-bottom:44px;font-weight:400;
+  font-size:clamp(17px,1.4vw,21px);line-height:1.5;color:rgba(255,255,255,.74);
+  max-width:560px;margin-bottom:42px;font-weight:400;
   opacity:0;transform:translateY(24px);animation:fadeUp .9s var(--ease) .7s forwards;
 }
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
@@ -142,897 +166,886 @@ h1.htitle em{
   opacity:0;transform:translateY(24px);animation:fadeUp .9s var(--ease) .85s forwards;
 }
 .btn{
-  padding:20px 30px;border-radius:12px;font-weight:600;font-size:16.5px;letter-spacing:-.01em;
-  display:inline-flex;align-items:center;gap:12px;
+  padding:19px 28px;border-radius:12px;font-weight:600;font-size:16px;letter-spacing:-.005em;
+  display:inline-flex;align-items:center;gap:11px;
   transition:all .35s var(--ease);position:relative;overflow:hidden;
 }
-.btn-red{
-  background:var(--red);color:#fff;
-  box-shadow:0 14px 40px -10px rgba(31,107,255,.7),inset 0 1px 0 rgba(255,255,255,.2);
+.btn-blue{
+  background:linear-gradient(180deg,var(--wave) 0%,var(--tide) 100%);color:#fff;
+  box-shadow:0 14px 40px -10px rgba(26,140,216,.7),inset 0 1px 0 rgba(255,255,255,.25);
 }
-.btn-red:hover{background:var(--red-dk);transform:translateY(-3px);box-shadow:0 20px 50px -8px rgba(31,107,255,.8)}
-.btn-red svg{width:18px;height:18px}
-.btn-ghost-w{
-  background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.22);color:#fff;
+.btn-blue:hover{transform:translateY(-3px);box-shadow:0 22px 50px -8px rgba(26,140,216,.85),inset 0 1px 0 rgba(255,255,255,.3)}
+.btn-blue svg{width:18px;height:18px}
+.btn-ghost{
+  background:rgba(255,255,255,.04);border:1.5px solid rgba(159,224,247,.22);color:#fff;
   backdrop-filter:blur(10px);
 }
-.btn-ghost-w:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-3px)}
-.btn-ghost-w svg{width:16px;height:16px}
+.btn-ghost:hover{background:rgba(63,182,239,.08);border-color:var(--crest);transform:translateY(-3px)}
+.btn-ghost svg{width:16px;height:16px}
 
 /* hero phone block */
 .hero-phone-card{
   position:relative;
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
-  border-radius:20px;padding:32px 34px;backdrop-filter:blur(16px);
+  background:linear-gradient(160deg,rgba(63,182,239,.06),rgba(14,95,160,.04));
+  border:1px solid rgba(159,224,247,.14);
+  border-radius:22px;padding:30px 32px;backdrop-filter:blur(16px);
   opacity:0;transform:translateY(40px);animation:fadeUp 1s var(--ease) 1s forwards;
 }
 .hero-phone-card::before{
-  content:"";position:absolute;top:-1px;left:30%;right:30%;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(78,168,255,.6),transparent);
+  content:"";position:absolute;top:-1px;left:25%;right:25%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--crest),transparent);
 }
 .hero-phone-label{
-  font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--amber);margin-bottom:14px;display:flex;align-items:center;gap:10px;
+  font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--crest);margin-bottom:14px;display:flex;align-items:center;gap:10px;
 }
-.hero-phone-label::before{content:"";width:24px;height:1px;background:var(--amber)}
+.hero-phone-label::before{content:"";width:24px;height:1px;background:var(--crest)}
 .hero-phone-num{
-  font-family:var(--sans);font-weight:800;font-size:44px;letter-spacing:-.03em;line-height:1;
+  font-family:var(--sans);font-weight:800;font-size:42px;letter-spacing:-.03em;line-height:1;
   color:#fff;margin-bottom:16px;
 }
 .hero-phone-num a{display:block;transition:color .2s}
-.hero-phone-num a:hover{color:var(--amber)}
-.hero-phone-sub{font-size:14px;color:rgba(255,255,255,.7);line-height:1.5}
-.hero-phone-sub b{color:var(--ok);font-weight:600}
+.hero-phone-num a:hover{color:var(--crest)}
+.hero-phone-sub{font-size:14px;color:rgba(255,255,255,.7);line-height:1.55}
+.hero-phone-sub b{color:var(--crest);font-weight:600}
 
 /* hero stats */
 .hero-stats{
-  position:relative;z-index:2;
+  position:relative;z-index:3;
   display:grid;grid-template-columns:repeat(4,1fr);gap:0;
-  margin-top:80px;padding-top:40px;border-top:1px solid rgba(255,255,255,.1);
+  margin-top:80px;padding-top:38px;border-top:1px solid var(--line);
   opacity:0;transform:translateY(24px);animation:fadeUp 1s var(--ease) 1.2s forwards;
 }
-.hero-stat{padding:0 30px;border-left:1px solid rgba(255,255,255,.08)}
+.hero-stat{padding:0 30px;border-left:1px solid var(--line-soft)}
 .hero-stat:first-child{border-left:none;padding-left:0}
 .hero-stat-num{
-  font-weight:700;font-size:clamp(32px,3.5vw,48px);letter-spacing:-.03em;line-height:1;
-  color:#fff;margin-bottom:8px;display:flex;align-items:baseline;gap:4px;
+  font-weight:700;font-size:clamp(30px,3.4vw,46px);letter-spacing:-.03em;line-height:1;
+  color:#fff;margin-bottom:10px;display:flex;align-items:baseline;gap:4px;
 }
 .hero-stat-num em{
-  font-family:var(--serif);font-style:italic;font-weight:400;font-size:.6em;color:var(--amber);
+  font-family:var(--serif);font-style:italic;font-weight:400;font-size:.6em;color:var(--crest);
 }
-.hero-stat-label{font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.4}
+.hero-stat-label{font-size:13px;color:rgba(255,255,255,.55);line-height:1.4}
 
-/* ─── review banner ─── */
-.review-strip{
-  background:var(--ink);color:#fff;padding:40px 0;border-top:1px solid var(--line);
-  overflow:hidden;
+/* ─── trust strip ─── */
+.trust{
+  background:var(--void);color:#fff;padding:40px 0;border-top:1px solid var(--line-soft);
+  border-bottom:1px solid var(--line-soft);overflow:hidden;
 }
-.review-inner{
-  display:flex;gap:60px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+.trust-inner{
+  display:flex;gap:48px;align-items:center;justify-content:space-between;flex-wrap:wrap;
 }
-.review-g{display:flex;gap:20px;align-items:center}
-.review-logo{
-  width:46px;height:46px;border-radius:50%;background:#fff;
-  display:grid;place-items:center;font-weight:700;font-size:22px;
-  background:conic-gradient(from 0deg,#4285F4,#EA4335,#FBBC05,#34A853,#4285F4);
+.trust-g{display:flex;gap:18px;align-items:center}
+.trust-icon{
+  width:46px;height:46px;border-radius:12px;
+  background:linear-gradient(135deg,var(--tide),var(--wave));
+  display:grid;place-items:center;color:#fff;
+  box-shadow:0 8px 22px -6px rgba(26,140,216,.5);
 }
-.review-logo span{
-  width:38px;height:38px;border-radius:50%;background:#fff;color:#4285F4;
-  display:grid;place-items:center;font-family:var(--sans);font-weight:700;
-}
-.review-txt{line-height:1.3}
-.review-txt b{font-size:18px;font-weight:600}
-.review-txt small{display:block;font-size:13px;color:rgba(255,255,255,.6);margin-top:3px}
-.review-stars{display:flex;gap:3px;color:var(--amber);margin-bottom:4px}
-.review-stars svg{width:16px;height:16px}
-.review-badges{display:flex;gap:36px;align-items:center;flex-wrap:wrap;opacity:.75}
-.review-badge{
-  font-weight:500;font-size:13.5px;letter-spacing:.05em;
-  text-transform:uppercase;color:rgba(255,255,255,.7);
+.trust-icon svg{width:22px;height:22px}
+.trust-txt{line-height:1.3}
+.trust-txt b{font-size:17px;font-weight:600}
+.trust-txt small{display:block;font-size:13px;color:rgba(255,255,255,.55);margin-top:3px}
+.trust-badges{display:flex;gap:32px;align-items:center;flex-wrap:wrap;opacity:.7}
+.trust-badge{
+  font-weight:600;font-size:12.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,.65);
 }
 
 /* ─── sections ─── */
 section{padding:120px 0;position:relative}
 .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:70px;flex-wrap:wrap}
-.section-head-left{max-width:720px}
+.section-head-left{max-width:760px}
 .eyebrow{
   display:inline-flex;align-items:center;gap:10px;
-  font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--red);margin-bottom:20px;
+  font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--crest);margin-bottom:22px;
 }
-.eyebrow::before{content:"";width:28px;height:2px;background:var(--red)}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--crest)}
 h2.stitle{
-  font-weight:700;font-size:clamp(38px,5vw,72px);line-height:1;letter-spacing:-.035em;
+  font-weight:700;font-size:clamp(36px,4.8vw,68px);line-height:1.02;letter-spacing:-.035em;
   margin-bottom:0;
 }
-h2.stitle em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--red);letter-spacing:-.02em}
-.slead{font-size:18px;color:rgba(6,17,26,.7);max-width:440px;line-height:1.55}
-
-/* ─── why strip ─── */
-.why{background:var(--ink);color:#fff;padding:80px 0}
-.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px 60px}
-.why-item{position:relative}
-.why-num{
+h2.stitle em{
   font-family:var(--serif);font-style:italic;font-weight:400;
-  font-size:68px;color:var(--amber);line-height:1;letter-spacing:-.03em;
-  margin-bottom:18px;display:flex;align-items:baseline;gap:4px;
+  background:linear-gradient(90deg,var(--wave),var(--crest));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  letter-spacing:-.02em;
 }
-.why-num sup{font-size:22px;color:#fff;font-style:normal;font-family:var(--sans);font-weight:500;opacity:.8}
-.why-h{font-size:20px;font-weight:600;margin-bottom:10px;letter-spacing:-.01em}
-.why-p{font-size:14.5px;color:rgba(255,255,255,.7);line-height:1.55}
+.slead{font-size:17.5px;color:rgba(255,255,255,.65);max-width:440px;line-height:1.55}
+
+/* ─── built-for-PM ─── */
+.bfor{background:var(--abyss);position:relative;overflow:hidden}
+.bfor::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 90% 0%,rgba(26,140,216,.12) 0%,transparent 50%),
+    radial-gradient(ellipse at 0% 100%,rgba(14,95,160,.1) 0%,transparent 50%);
+  pointer-events:none;
+}
+.bfor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative;z-index:2}
+.bfor-card{
+  background:linear-gradient(160deg,rgba(63,182,239,.04),rgba(255,255,255,.01));
+  border:1px solid var(--line);border-radius:22px;padding:36px 30px;
+  transition:transform .4s var(--ease),border-color .4s var(--ease),background .4s var(--ease);
+}
+.bfor-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(63,182,239,.4);
+  background:linear-gradient(160deg,rgba(63,182,239,.08),rgba(63,182,239,.02));
+}
+.bfor-icon{
+  width:54px;height:54px;border-radius:14px;
+  background:linear-gradient(135deg,var(--tide),var(--wave));
+  display:grid;place-items:center;color:#fff;margin-bottom:24px;
+  box-shadow:0 10px 30px -8px rgba(26,140,216,.55);
+}
+.bfor-icon svg{width:26px;height:26px}
+.bfor-h{font-size:19px;font-weight:700;letter-spacing:-.015em;margin-bottom:10px;color:#fff}
+.bfor-p{font-size:14.5px;color:rgba(255,255,255,.62);line-height:1.6}
 
 /* ─── services ─── */
-.services{background:var(--cream)}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.services{background:var(--void)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .svc{
-  background:#fff;border-radius:20px;overflow:hidden;
+  background:linear-gradient(170deg,var(--deep),var(--abyss));
+  border:1px solid var(--line);border-radius:22px;overflow:hidden;
   display:flex;flex-direction:column;
-  box-shadow:0 1px 0 rgba(6,17,26,.06),0 12px 40px -24px rgba(6,17,26,.2);
-  transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+  transition:transform .4s var(--ease),border-color .4s var(--ease),box-shadow .4s var(--ease);
+  position:relative;
 }
-.svc:hover{transform:translateY(-6px);box-shadow:0 1px 0 rgba(6,17,26,.1),0 24px 50px -20px rgba(6,17,26,.35)}
-.svc-img{
-  aspect-ratio:16/10;background:var(--slate) center/cover no-repeat;position:relative;overflow:hidden;
+.svc::before{
+  content:"";position:absolute;top:0;left:30%;right:30%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--crest),transparent);
+  opacity:0;transition:opacity .4s;
 }
-.svc-img::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 40%,rgba(6,17,26,.6) 100%);
+.svc:hover{
+  transform:translateY(-6px);border-color:rgba(63,182,239,.35);
+  box-shadow:0 24px 60px -20px rgba(26,140,216,.4);
 }
+.svc:hover::before{opacity:.6}
 .svc-tag{
-  position:absolute;top:16px;left:16px;z-index:2;
-  background:var(--red);color:#fff;padding:6px 12px;border-radius:999px;
-  font-size:12px;font-weight:600;letter-spacing:.03em;
+  display:inline-block;align-self:flex-start;
+  background:rgba(63,182,239,.12);color:var(--crest);
+  padding:6px 12px;border-radius:999px;
+  font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  margin:30px 30px 0;
 }
-.svc-body{padding:28px 28px 30px;flex:1;display:flex;flex-direction:column}
-.svc h3{font-size:23px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
-.svc p{font-size:14.5px;color:rgba(6,17,26,.65);line-height:1.55;margin-bottom:auto;padding-bottom:22px}
+.svc-body{padding:18px 30px 32px;flex:1;display:flex;flex-direction:column}
+.svc h3{font-size:22px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px;color:#fff}
+.svc p{font-size:14.5px;color:rgba(255,255,255,.62);line-height:1.6;margin-bottom:auto;padding-bottom:24px}
 .svc-foot{
   display:flex;justify-content:space-between;align-items:center;
-  padding-top:22px;border-top:1px solid var(--line-dk);
+  padding-top:22px;border-top:1px solid var(--line-soft);
 }
-.svc-price{font-size:13px;color:rgba(6,17,26,.55)}
-.svc-price b{display:block;font-size:20px;color:var(--ink);font-weight:700;letter-spacing:-.02em;margin-top:2px}
+.svc-meta{font-size:12.5px;color:rgba(255,255,255,.5);letter-spacing:.04em;text-transform:uppercase;font-weight:500}
 .svc-arrow{
   width:42px;height:42px;border-radius:50%;
-  background:var(--ink);color:#fff;
+  background:rgba(63,182,239,.1);color:var(--crest);
+  border:1px solid rgba(63,182,239,.25);
   display:grid;place-items:center;
   transition:all .3s var(--ease);
 }
-.svc:hover .svc-arrow{background:var(--red);transform:rotate(-45deg)}
+.svc:hover .svc-arrow{background:var(--wave);color:#fff;border-color:var(--wave);transform:rotate(-45deg)}
 .svc-arrow svg{width:16px;height:16px}
 
 /* ─── process ─── */
-.process{background:var(--ink);color:#fff;overflow:hidden}
-.process .stitle{color:#fff}
-.process .slead{color:rgba(255,255,255,.7)}
-.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-radius:20px;overflow:hidden;border:1px solid var(--line)}
-.proc{background:var(--steel);padding:42px 34px;min-height:260px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .4s}
-.proc:hover{background:var(--slate)}
+.process{background:var(--ink);overflow:hidden;position:relative}
+.process::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 50% -10%,rgba(63,182,239,.1) 0%,transparent 60%);
+  pointer-events:none;
+}
+.proc-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border-radius:22px;overflow:hidden;border:1px solid var(--line);
+  position:relative;z-index:2;
+}
+.proc{
+  background:var(--abyss);padding:42px 32px;min-height:280px;
+  display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .4s;
+}
+.proc:hover{background:var(--deep)}
 .proc::before{
   content:attr(data-n);
-  position:absolute;bottom:-40px;right:-10px;
+  position:absolute;bottom:-44px;right:-12px;
   font-family:var(--serif);font-style:italic;font-weight:400;
-  font-size:200px;color:rgba(78,168,255,.06);line-height:1;pointer-events:none;
+  font-size:200px;color:rgba(63,182,239,.06);line-height:1;pointer-events:none;
 }
 .proc-n{
   width:44px;height:44px;border-radius:50%;
-  background:var(--red);color:#fff;
+  background:linear-gradient(135deg,var(--wave),var(--tide));color:#fff;
   display:grid;place-items:center;font-weight:700;font-size:15px;
-  margin-bottom:26px;box-shadow:0 6px 20px -6px rgba(31,107,255,.6);
+  margin-bottom:26px;box-shadow:0 8px 22px -6px rgba(26,140,216,.6);
 }
-.proc h4{font-size:21px;font-weight:700;letter-spacing:-.02em;margin-bottom:12px}
-.proc p{font-size:14.5px;color:rgba(255,255,255,.65);line-height:1.55;position:relative;z-index:2}
+.proc h4{font-size:21px;font-weight:700;letter-spacing:-.02em;margin-bottom:12px;color:#fff}
+.proc p{font-size:14.5px;color:rgba(255,255,255,.62);line-height:1.6;position:relative;z-index:2}
 
 /* ─── testimonials ─── */
-.t-sec{background:var(--cream)}
-.t-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:20px}
-.t-card{
-  background:#fff;border-radius:20px;padding:40px 36px;
-  display:flex;flex-direction:column;gap:24px;
-  box-shadow:0 1px 0 rgba(6,17,26,.06),0 12px 40px -24px rgba(6,17,26,.15);
-  transition:transform .4s var(--ease);
+.t-sec{background:var(--void);position:relative;overflow:hidden}
+.t-sec::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 80% 50%,rgba(14,95,160,.1) 0%,transparent 50%);
+  pointer-events:none;
 }
-.t-card:hover{transform:translateY(-4px)}
+.t-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:18px;position:relative;z-index:2}
+.t-card{
+  background:linear-gradient(170deg,var(--deep),var(--abyss));
+  border:1px solid var(--line);border-radius:22px;padding:36px 32px;
+  display:flex;flex-direction:column;gap:22px;
+  transition:transform .4s var(--ease),border-color .4s var(--ease);
+}
+.t-card:hover{transform:translateY(-4px);border-color:rgba(63,182,239,.3)}
 .t-card.big{
   grid-row:span 1;
-  background:var(--ink);color:#fff;
-  background-image:
-    radial-gradient(circle at 90% 10%,rgba(78,168,255,.15) 0%,transparent 50%),
-    radial-gradient(circle at 10% 90%,rgba(31,107,255,.1) 0%,transparent 50%);
+  background:
+    radial-gradient(circle at 90% 10%,rgba(63,182,239,.18) 0%,transparent 55%),
+    radial-gradient(circle at 10% 90%,rgba(26,140,216,.12) 0%,transparent 55%),
+    linear-gradient(170deg,var(--slate),var(--deep));
+  border-color:rgba(63,182,239,.25);
 }
-.t-stars{display:flex;gap:2px;color:var(--amber)}
-.t-stars svg{width:18px;height:18px}
-.t-quote{font-size:19px;line-height:1.45;letter-spacing:-.01em;font-weight:500}
-.t-card.big .t-quote{font-size:26px;line-height:1.3;font-weight:500}
-.t-card.big .t-quote em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--amber)}
-.t-auth{display:flex;gap:14px;align-items:center;padding-top:20px;border-top:1px solid var(--line-dk);margin-top:auto}
-.t-card.big .t-auth{border-top-color:rgba(255,255,255,.12)}
+.t-stars{display:flex;gap:2px;color:var(--crest)}
+.t-stars svg{width:18px;height:18px;fill:currentColor}
+.t-quote{font-size:18px;line-height:1.5;letter-spacing:-.005em;font-weight:500;color:rgba(255,255,255,.92)}
+.t-card.big .t-quote{font-size:26px;line-height:1.35;font-weight:500;color:#fff}
+.t-card.big .t-quote em{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  background:linear-gradient(90deg,var(--crest),var(--foam));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.t-auth{display:flex;gap:14px;align-items:center;padding-top:20px;border-top:1px solid var(--line-soft);margin-top:auto}
 .t-avatar{
-  width:46px;height:46px;border-radius:50%;overflow:hidden;flex-shrink:0;
-  background:var(--slate) center/cover no-repeat;
-  font-weight:600;color:#fff;display:grid;place-items:center;font-size:17px;
+  width:46px;height:46px;border-radius:50%;
+  background:linear-gradient(135deg,var(--tide),var(--wave));
+  display:grid;place-items:center;color:#fff;font-weight:700;font-size:16px;
+  flex-shrink:0;
 }
-.t-auth-name{font-weight:600;font-size:15px;letter-spacing:-.01em}
-.t-auth-loc{font-size:13px;opacity:.6;margin-top:2px}
+.t-name{font-size:15px;font-weight:600;color:#fff}
+.t-role{font-size:13px;color:rgba(255,255,255,.55);margin-top:2px}
 
-/* ─── guarantee ─── */
-.gsec{background:#fff;padding:130px 0}
-.g-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.g-visual{
-  aspect-ratio:1;border-radius:28px;overflow:hidden;position:relative;
+/* ─── coverage ─── */
+.cov{background:var(--abyss);position:relative;overflow:hidden}
+.cov::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 50%,rgba(63,182,239,.08) 0%,transparent 55%);
+  pointer-events:none;
+}
+.cov-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:2}
+.cov-list{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px 24px;
+  margin-top:36px;
+}
+.cov-list span{
+  font-size:14.5px;color:rgba(255,255,255,.78);
+  display:flex;align-items:center;gap:10px;
+}
+.cov-list span::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:var(--crest);
+  box-shadow:0 0 12px rgba(63,182,239,.6);
+}
+.cov-map{
+  aspect-ratio:1;border-radius:24px;
   background:
-    linear-gradient(135deg,rgba(6,17,26,.55) 0%,rgba(6,17,26,.75) 100%),
-    url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+    radial-gradient(circle at 50% 50%,rgba(63,182,239,.18) 0%,transparent 50%),
+    linear-gradient(160deg,var(--deep),var(--abyss));
+  border:1px solid var(--line);
+  position:relative;overflow:hidden;
   display:grid;place-items:center;
-  box-shadow:0 40px 80px -30px rgba(6,17,26,.4);
 }
-.g-seal{
-  width:min(72%,380px);aspect-ratio:1;border-radius:50%;
-  background:rgba(255,255,255,.06);border:2px dashed rgba(78,168,255,.6);
-  display:grid;place-items:center;color:#fff;text-align:center;
-  animation:spin 40s linear infinite;
-  backdrop-filter:blur(6px);
-}
-@keyframes spin{to{transform:rotate(360deg)}}
-.g-seal-inner{
-  animation:spin 40s linear infinite reverse;
-}
-.g-seal-inner b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:72px;color:var(--amber);display:block;line-height:1}
-.g-seal-inner span{display:block;font-size:13px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;margin-top:10px;color:rgba(255,255,255,.85)}
-.g-list{list-style:none;display:grid;gap:22px;margin-top:50px}
-.g-list li{display:flex;gap:18px;align-items:flex-start;font-size:17px;line-height:1.5;color:rgba(6,17,26,.82)}
-.g-check{
-  flex-shrink:0;width:30px;height:30px;border-radius:50%;
-  background:var(--ok);display:grid;place-items:center;margin-top:1px;
-  box-shadow:0 4px 12px -2px rgba(41,193,109,.5);
-}
-.g-check svg{width:15px;height:15px;stroke:#fff;stroke-width:3}
-.g-list li b{color:var(--ink);font-weight:700}
+.cov-map svg{width:80%;height:80%;opacity:.9}
 
-/* ─── gallery / trust ─── */
-.trust-sec{background:var(--ink);color:#fff;padding:100px 0}
-.trust-logos{display:grid;grid-template-columns:repeat(6,1fr);gap:40px;align-items:center;margin-top:40px;opacity:.6}
-.trust-logos span{
-  font-family:var(--serif);font-style:italic;font-size:22px;font-weight:400;
-  text-align:center;letter-spacing:-.01em;color:rgba(255,255,255,.7);
-}
-
-/* ─── FAQ ─── */
-.faq-sec{background:var(--cream);padding:130px 0}
-.faq-wrap{display:grid;grid-template-columns:.85fr 1.2fr;gap:90px;align-items:flex-start}
-.faq-list{display:grid;gap:12px}
-.faq-item{
-  background:#fff;border-radius:16px;overflow:hidden;
-  box-shadow:0 1px 0 rgba(6,17,26,.06),0 8px 30px -20px rgba(6,17,26,.15);
-  transition:box-shadow .3s;
-}
-.faq-item[open]{box-shadow:0 1px 0 rgba(6,17,26,.06),0 20px 50px -20px rgba(6,17,26,.2)}
-.faq-item summary{
-  list-style:none;cursor:pointer;padding:24px 28px;
-  display:flex;justify-content:space-between;align-items:center;gap:20px;
-  font-size:18px;font-weight:600;letter-spacing:-.015em;
-}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-plus{
-  width:30px;height:30px;border-radius:50%;flex-shrink:0;
-  background:var(--cream);display:grid;place-items:center;
-  transition:all .35s var(--ease);
-}
-.faq-plus svg{width:14px;height:14px;stroke:var(--ink);stroke-width:2.2;transition:transform .35s var(--ease)}
-.faq-item[open] .faq-plus{background:var(--red)}
-.faq-item[open] .faq-plus svg{stroke:#fff;transform:rotate(45deg)}
-.faq-item p{padding:0 28px 28px;font-size:15.5px;color:rgba(6,17,26,.7);line-height:1.6;max-width:640px}
-
-/* ─── final CTA ─── */
-.final{
+/* ─── CTA ─── */
+.cta{
   background:
-    radial-gradient(circle at 25% 20%,rgba(78,168,255,.25) 0%,transparent 55%),
-    radial-gradient(circle at 80% 80%,rgba(31,107,255,.35) 0%,transparent 55%),
-    var(--ink);
-  color:#fff;padding:140px 0;text-align:center;position:relative;overflow:hidden;
+    radial-gradient(ellipse at 30% 50%,rgba(26,140,216,.25) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 30%,rgba(63,182,239,.18) 0%,transparent 50%),
+    linear-gradient(180deg,var(--abyss) 0%,var(--ink) 100%);
+  padding:140px 0;position:relative;overflow:hidden;
 }
-.final::before{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background-image:
-    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
-  background-size:60px 60px;
-  mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%);
+.cta-wave{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  pointer-events:none;opacity:.4;
 }
-.final .wrap{position:relative;z-index:2}
-.final-ey{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:8px 14px 8px 10px;
-  background:rgba(31,107,255,.15);border:1px solid rgba(31,107,255,.4);
-  border-radius:999px;font-size:13px;font-weight:500;
-  color:#ffc7bb;margin-bottom:30px;
+.cta-wave svg{width:120%;height:auto;animation:waveFloat 11s ease-in-out infinite}
+.cta-inner{position:relative;z-index:2;text-align:center;max-width:780px;margin:0 auto}
+.cta h2{font-size:clamp(36px,5vw,68px);font-weight:700;line-height:1.05;letter-spacing:-.035em;margin-bottom:24px;color:#fff}
+.cta h2 em{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  background:linear-gradient(90deg,var(--crest),var(--foam));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
-.final-ey .dot{background:var(--red)}
-.final h2{
-  font-weight:700;font-size:clamp(44px,6.5vw,96px);line-height:.95;letter-spacing:-.045em;
-  margin-bottom:26px;
-}
-.final h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--amber)}
-.final p{font-size:20px;color:rgba(255,255,255,.75);max-width:560px;margin:0 auto 46px;line-height:1.5}
-.final-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.final-phone{
-  margin-top:40px;font-family:var(--sans);font-weight:700;font-size:36px;letter-spacing:-.03em;
-  display:flex;gap:16px;align-items:center;justify-content:center;
-}
-.final-phone a{color:var(--amber);transition:color .2s}
-.final-phone a:hover{color:#fff}
-.final-phone svg{width:28px;height:28px;stroke:var(--amber)}
+.cta p{font-size:18px;color:rgba(255,255,255,.75);line-height:1.55;margin-bottom:42px;max-width:560px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
 /* ─── footer ─── */
-footer{background:var(--ink);color:#fff;padding:80px 0 40px;border-top:1px solid var(--line)}
-.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
-.f-brand p{font-size:14.5px;color:rgba(255,255,255,.65);line-height:1.6;margin-top:20px;max-width:320px}
-.f-brand .logo-txt small{color:var(--amber)}
-footer h5{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px;color:rgba(255,255,255,.95)}
-footer ul{list-style:none;display:grid;gap:12px;font-size:14.5px;color:rgba(255,255,255,.7)}
-footer ul a{transition:color .2s}
-footer ul a:hover{color:var(--amber)}
-.f-bottom{
-  border-top:1px solid var(--line);padding-top:30px;
-  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
-  font-size:13px;color:rgba(255,255,255,.5);
+footer{
+  background:var(--void);color:rgba(255,255,255,.7);padding:80px 0 40px;
+  border-top:1px solid var(--line-soft);
 }
-
-/* sticky mobile call */
-.mcall{
-  display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;
-  background:var(--red);color:#fff;padding:14px 18px;
-  justify-content:space-between;align-items:center;gap:14px;
-  box-shadow:0 -10px 30px rgba(0,0,0,.3);
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+.foot-brand{display:flex;flex-direction:column;gap:20px;max-width:340px}
+.foot-brand .logo img{width:60px;height:60px}
+.foot-brand p{font-size:14.5px;color:rgba(255,255,255,.55);line-height:1.6}
+.foot-h{
+  font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--crest);margin-bottom:20px;
 }
-.mcall strong{font-weight:700;font-size:16.5px;display:flex;gap:8px;align-items:center;letter-spacing:-.01em}
-.mcall a{
-  background:#fff;color:var(--ink);padding:10px 18px;border-radius:10px;
-  font-weight:700;font-size:14.5px;display:inline-flex;align-items:center;gap:8px;
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.foot-col a{font-size:14.5px;color:rgba(255,255,255,.65);transition:color .2s}
+.foot-col a:hover{color:var(--crest)}
+.foot-bot{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;
+  padding-top:32px;border-top:1px solid var(--line-soft);
+  font-size:13px;color:rgba(255,255,255,.45);
 }
-.mcall a svg{width:14px;height:14px}
+.foot-bot-l{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.foot-bot a:hover{color:var(--crest)}
 
 /* ─── responsive ─── */
 @media (max-width:1024px){
-  .nav-links{display:none}
   .hero-grid{grid-template-columns:1fr;gap:50px}
-  .hero-phone-card{max-width:420px}
-  .hero-stats{grid-template-columns:repeat(2,1fr);gap:30px}
-  .hero-stat{padding:20px 20px 0;border-left:none;border-top:1px solid rgba(255,255,255,.08)}
-  .hero-stat:nth-child(1),.hero-stat:nth-child(2){border-top:none;padding-top:0}
-  .why-grid{grid-template-columns:repeat(2,1fr)}
-  .svc-grid{grid-template-columns:1fr 1fr}
-  .proc-grid{grid-template-columns:1fr 1fr}
-  .t-grid{grid-template-columns:1fr}
-  .g-wrap{grid-template-columns:1fr;gap:50px}
-  .faq-wrap{grid-template-columns:1fr;gap:40px}
-  .trust-logos{grid-template-columns:repeat(3,1fr)}
-  .f-grid{grid-template-columns:1fr 1fr;gap:40px}
+  .hero-stats{grid-template-columns:repeat(2,1fr);gap:30px 0}
+  .hero-stat{padding:0 20px}
+  .hero-stat:nth-child(3){border-left:none;padding-left:20px}
+  .bfor-grid{grid-template-columns:repeat(2,1fr)}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .proc-grid{grid-template-columns:repeat(2,1fr)}
+  .t-grid{grid-template-columns:1fr 1fr}
+  .t-card.big{grid-column:span 2}
+  .cov-grid{grid-template-columns:1fr;gap:50px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:40px}
+  .nav-links{display:none}
 }
 @media (max-width:640px){
-  .ebar-left span:nth-child(3),.ebar-left span:nth-child(2){display:none}
-  .hero{padding:180px 0 80px;min-height:auto}
-  section{padding:80px 0}
+  nav.main{padding:18px 0;top:34px}
+  .hero{padding:160px 0 100px}
+  .hero-stats{grid-template-columns:1fr;gap:24px}
+  .hero-stat{border-left:none !important;padding:24px 0 0;border-top:1px solid var(--line-soft)}
+  .hero-stat:first-child{padding-top:0;border-top:none}
+  .bfor-grid{grid-template-columns:1fr}
   .svc-grid{grid-template-columns:1fr}
   .proc-grid{grid-template-columns:1fr}
-  .trust-logos{grid-template-columns:repeat(2,1fr);gap:24px}
-  .f-grid{grid-template-columns:1fr}
-  .hero-phone-num{font-size:34px}
-  .mcall{display:flex}
-  body{padding-bottom:72px}
+  .t-grid{grid-template-columns:1fr}
+  .t-card.big{grid-column:span 1}
+  .foot-grid{grid-template-columns:1fr;gap:36px}
+  section{padding:80px 0}
+  .cta{padding:90px 0}
+  .tbar{font-size:12.5px}
+  .tbar-left{gap:14px}
+  .logo-txt small{display:none}
 }
 </style>
 </head>
 <body>
 
-<!-- emergency bar -->
-<div class="ebar">
+<!-- TOP BAR -->
+<div class="tbar">
   <div class="wrap">
-    <div class="ebar-left">
-      <span><span class="dot"></span><strong>Open now</strong> · 24/7 emergency</span>
-      <span>Melbourne-wide · 45-min arrival</span>
-      <span>VBA licensed · Gas-safe</span>
+    <div class="tbar-left">
+      <span><span class="dot"></span> For property managers &amp; real estate agencies</span>
+      <span>Melbourne metro · 24/7 emergency response</span>
     </div>
-    <a href="tel:+61390000000" class="phone">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      Call (03) 9000 0000
+    <a href="tel:+61300000000" class="phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Agency hotline · 1300 000 000
     </a>
   </div>
 </div>
 
-<!-- nav -->
-<nav class="main" id="nav">
+<!-- NAV -->
+<nav class="main">
   <div class="wrap">
-    <a href="/" class="logo">
-      <span class="logo-mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 6 5 9 5 14a7 7 0 0 0 14 0c0-5-3-8-7-12z"/></svg>
-      </span>
-      <span class="logo-txt">Urban Tide<small>Plumbing · Est. 2011</small></span>
+    <a href="#top" class="logo">
+      <img src="logo.jpg" alt="Urban Tide Plumbing" />
+      <div class="logo-txt">URBAN TIDE<small>Plumbing</small></div>
     </a>
     <div class="nav-links">
+      <a href="#why">For agencies</a>
       <a href="#services">Services</a>
       <a href="#process">How it works</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#guarantee">Guarantee</a>
-      <a href="#faq">FAQ</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#coverage">Coverage</a>
     </div>
-    <a href="tel:+61390000000" class="nav-cta">
-      Call now
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <a href="#cta" class="nav-cta">
+      Add us to your panel
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
     </a>
   </div>
 </nav>
 
 <!-- HERO -->
-<header class="hero">
+<section class="hero" id="top" style="padding-top:200px">
+  <!-- Big animated wave SVG -->
+  <div class="hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 1600 800" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#0e5fa0" stop-opacity=".8"/>
+          <stop offset="40%" stop-color="#1a8cd8"/>
+          <stop offset="70%" stop-color="#3fb6ef"/>
+          <stop offset="100%" stop-color="#9ee0f7" stop-opacity=".8"/>
+        </linearGradient>
+        <linearGradient id="waveFill" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#1a8cd8" stop-opacity=".22"/>
+          <stop offset="100%" stop-color="#0e5fa0" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="14" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <!-- the signature Urban Tide arching wave, blown up -->
+      <path d="M-50,520 C 220,180 480,140 800,260 C 1140,390 1340,540 1700,360"
+            fill="none" stroke="url(#waveGrad)" stroke-width="6" stroke-linecap="round"
+            filter="url(#glow)" opacity=".95"/>
+      <path d="M-50,560 C 240,240 500,200 820,310 C 1160,430 1360,560 1700,420"
+            class="crest-line"/>
+      <!-- soft fill underneath -->
+      <path d="M-50,560 C 240,240 500,200 820,310 C 1160,430 1360,560 1700,420 L 1700,800 L -50,800 Z"
+            fill="url(#waveFill)"/>
+    </svg>
+  </div>
+
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="hero-eyebrow"><span class="dot"></span>Melbourne's most-booked emergency plumbers</div>
+        <div class="hero-eyebrow"><span class="dot"></span> Melbourne · trusted by agencies since 2018</div>
         <h1 class="htitle">
-          <span class="line"><span>Burst pipes.</span></span>
-          <span class="line"><span>Dead hot water.</span></span>
-          <span class="line"><span><em>Fixed fast.</em></span></span>
+          <span class="line"><span>Your tenant's</span></span>
+          <span class="line"><span>plumbing emergency,</span></span>
+          <span class="line"><span><em>handled.</em></span></span>
         </h1>
-        <p class="hero-sub">A licensed plumber at your door in under 45 minutes — or we take $50 off the invoice. No call-out fee, no weekend loading, no nasty surprises.</p>
+        <p class="hero-sub">
+          The plumbing partner Melbourne property managers actually call back. Photo job reports for the owner, direct billing to the agency, and a real human on the phone — even at 2am.
+        </p>
         <div class="hero-ctas">
-          <a href="tel:+61390000000" class="btn btn-red">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call now — (03) 9000 0000
+          <a href="#cta" class="btn btn-blue">
+            Add us to your contractor panel
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
-          <a href="#book" class="btn btn-ghost-w">
-            Book online
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          <a href="tel:+61300000000" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call us now
           </a>
         </div>
       </div>
-      <aside class="hero-phone-card">
-        <div class="hero-phone-label">24 / 7 Emergency Line</div>
-        <div class="hero-phone-num"><a href="tel:+61390000000">(03) 9000&nbsp;0000</a></div>
-        <div class="hero-phone-sub">A real plumber picks up — not a call centre. <b>Average answer time: 18 seconds.</b></div>
-      </aside>
+
+      <div class="hero-phone-card">
+        <div class="hero-phone-label">Agency hotline</div>
+        <div class="hero-phone-num"><a href="tel:+61300000000">1300 000 000</a></div>
+        <div class="hero-phone-sub">
+          Direct line for property managers. <b>Live answer 24/7</b> — no triage queue, no chatbot, no after-hours service.
+        </div>
+      </div>
     </div>
 
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">45<em>min</em></div><div class="hero-stat-label">Avg arrival<br/>Melbourne metro</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">4.9<em>★</em></div><div class="hero-stat-label">680+ Google<br/>reviews</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">12,400<em>+</em></div><div class="hero-stat-label">Jobs completed<br/>since 2011</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">$0</div><div class="hero-stat-label">Call-out fee<br/>every job</div></div>
-    </div>
-  </div>
-</header>
-
-<!-- review strip -->
-<div class="review-strip">
-  <div class="wrap review-inner">
-    <div class="review-g">
-      <div class="review-logo"><span>G</span></div>
-      <div class="review-txt">
-        <div class="review-stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-        </div>
-        <b>4.9 / 5</b> · 680+ Google reviews
-        <small>Highest-rated residential plumber, inner-east Melbourne</small>
+      <div class="hero-stat">
+        <div class="hero-stat-num">45<em>min</em></div>
+        <div class="hero-stat-label">Average emergency arrival, Melbourne metro</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">2,400+</div>
+        <div class="hero-stat-label">Managed properties on our books</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">24/7</div>
+        <div class="hero-stat-label">Live agency hotline, never voicemail</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100<em>%</em></div>
+        <div class="hero-stat-label">Photo-documented job reports</div>
       </div>
     </div>
-    <div class="review-badges">
-      <span class="review-badge">VBA Licence 45821</span>
-      <span class="review-badge">Master Plumbers</span>
-      <span class="review-badge">Fully Insured $20M</span>
-      <span class="review-badge">Gas-Safe Certified</span>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="wrap trust-inner">
+    <div class="trust-g">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="trust-txt">
+        <b>4.9 / 5 from 380+ reviews</b>
+        <small>Google · ProductReview · agency referrals</small>
+      </div>
+    </div>
+    <div class="trust-badges">
+      <span class="trust-badge">Lic. 51234</span>
+      <span class="trust-badge">VBA Registered</span>
+      <span class="trust-badge">Gas-Safe Certified</span>
+      <span class="trust-badge">$20M Public Liability</span>
     </div>
   </div>
 </div>
 
-<!-- why -->
-<section class="why">
+<!-- BUILT FOR PROPERTY MANAGERS -->
+<section class="bfor" id="why">
   <div class="wrap">
-    <div class="section-head" style="margin-bottom:50px">
+    <div class="section-head">
       <div class="section-head-left">
-        <div class="eyebrow" style="color:var(--amber)">Why 680+ Melbourne homes chose us</div>
-        <h2 class="stitle" style="color:#fff">Four promises, <em style="color:var(--amber)">in writing.</em></h2>
+        <div class="eyebrow">Built for agencies</div>
+        <h2 class="stitle">Plumbing that <em>doesn't land back on your desk.</em></h2>
       </div>
-      <p class="slead" style="color:rgba(255,255,255,.7)">These aren't marketing slogans — they're on every invoice, every quote, every job card. If we miss one, we pay.</p>
+      <p class="slead">Most plumbers were built to serve homeowners. We were built to serve the people who manage 200 of them.</p>
     </div>
-    <div class="why-grid">
-      <div class="why-item">
-        <div class="why-num">45<sup>min</sup></div>
-        <div class="why-h">On your doorstep — or $50 off</div>
-        <div class="why-p">Across inner Melbourne, average arrival is 38 minutes. If we pass 45, your invoice auto-reduces by $50.</div>
+    <div class="bfor-grid">
+      <div class="bfor-card">
+        <div class="bfor-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div class="bfor-h">Photo job reports</div>
+        <div class="bfor-p">Every job comes back with photos, scope, parts used, and a clean owner-ready summary you can forward as-is. No chasing, no follow-up emails.</div>
       </div>
-      <div class="why-item">
-        <div class="why-num">$0</div>
-        <div class="why-h">No call-out fee. Ever.</div>
-        <div class="why-p">No fuel surcharge, no weekend loading, no after-hours levy. Don't like the quote? We leave — you owe nothing.</div>
+      <div class="bfor-card">
+        <div class="bfor-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>
+        </div>
+        <div class="bfor-h">Direct agency billing</div>
+        <div class="bfor-p">Invoice the agency, the owner, or both — your call, per property. Itemised, GST-compliant, tradie work order numbers cross-referenced. Sent within 24 hours.</div>
       </div>
-      <div class="why-item">
-        <div class="why-num">12<sup>mo</sup></div>
-        <div class="why-h">Workmanship warranty</div>
-        <div class="why-p">Fails inside 12 months? We're back, no charge. It's written on your invoice, not buried in fine print.</div>
+      <div class="bfor-card">
+        <div class="bfor-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="bfor-h">After-hours coverage</div>
+        <div class="bfor-p">Burst pipe at 11pm? Tenant calls our hotline directly — we attend, isolate, and email you a report by morning. You sleep, the property is safe.</div>
       </div>
-      <div class="why-item">
-        <div class="why-num">4.9<sup>★</sup></div>
-        <div class="why-h">Highest-rated in the east</div>
-        <div class="why-p">680+ verified Google reviews. 98% of our 2025 customers said they'd recommend us to family.</div>
+      <div class="bfor-card">
+        <div class="bfor-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/></svg>
+        </div>
+        <div class="bfor-h">Compliance, handled</div>
+        <div class="bfor-p">Gas safety checks, smoke alarms, backflow testing — scheduled, performed, certified, and uploaded to your system. Audit-ready, every property, every year.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- services -->
-<section id="services" class="services">
+<!-- SERVICES -->
+<section class="services" id="services">
   <div class="wrap">
     <div class="section-head">
       <div class="section-head-left">
-        <div class="eyebrow">What we fix</div>
-        <h2 class="stitle">Residential plumbing,<br/><em>done right the first time.</em></h2>
+        <div class="eyebrow">What we cover</div>
+        <h2 class="stitle">One panel contractor. <em>Every plumbing job.</em></h2>
       </div>
-      <p class="slead">Every job starts with a written, fixed-price quote and ends with a photo-documented sign-off. No surprise add-ons, no "while we're here" upsells.</p>
+      <p class="slead">From routine maintenance through emergency callouts, compliance, and insurance work — one number, one invoice trail, one accountable team.</p>
     </div>
-
     <div class="svc-grid">
-      <article class="svc">
-        <div class="svc-img" style="background-image:linear-gradient(180deg,transparent 40%,rgba(6,17,26,.4)),url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80')">
-          <span class="svc-tag">Emergency</span>
-        </div>
+      <div class="svc">
+        <span class="svc-tag">Reactive</span>
         <div class="svc-body">
-          <h3>Burst pipes & leaks</h3>
-          <p>Slab leaks, burst flex hoses, ceiling drip, kitchen flood. We isolate, diagnose, fix — then document it for your insurer.</p>
+          <h3>Tenant maintenance &amp; repairs</h3>
+          <p>Leaks, dripping taps, blocked drains, hot water failures, toilet repairs. Booked, attended, photographed, invoiced — usually same day.</p>
           <div class="svc-foot">
-            <div class="svc-price">From<b>$0 call-out</b></div>
-            <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+            <span class="svc-meta">Same-day · 7 days</span>
+            <div class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
           </div>
         </div>
-      </article>
-
-      <article class="svc">
-        <div class="svc-img" style="background-image:linear-gradient(180deg,transparent 40%,rgba(6,17,26,.4)),url('https://images.unsplash.com/photo-1584622781867-1c5feb0e02ab?auto=format&fit=crop&w=1200&q=80')">
-          <span class="svc-tag">CCTV mapped</span>
-        </div>
+      </div>
+      <div class="svc">
+        <span class="svc-tag">Emergency</span>
         <div class="svc-body">
-          <h3>Blocked drains</h3>
-          <p>Every blockage diagnosed with a camera before we quote. You see the cause. We clear it. You keep the footage.</p>
+          <h3>24/7 burst &amp; flood response</h3>
+          <p>Burst pipes, flooded bathrooms, sewer backups. We attend, isolate, document, and have the property safe before morning. Your phone stays quiet.</p>
           <div class="svc-foot">
-            <div class="svc-price">From<b>$89</b></div>
-            <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+            <span class="svc-meta">45-min metro response</span>
+            <div class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
           </div>
         </div>
-      </article>
-
-      <article class="svc">
-        <div class="svc-img" style="background-image:linear-gradient(180deg,transparent 40%,rgba(6,17,26,.4)),url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1200&q=80')">
-          <span class="svc-tag">Same-day</span>
-        </div>
+      </div>
+      <div class="svc">
+        <span class="svc-tag">Compliance</span>
         <div class="svc-body">
-          <h3>Hot water systems</h3>
-          <p>Gas, electric, heat-pump, solar. Repairs and replacements. Rheem, Rinnai, Bosch supplied same day.</p>
+          <h3>Gas, smoke alarm &amp; backflow</h3>
+          <p>Annual gas safety checks, smoke alarm compliance, RPZ backflow testing — scheduled, certified, and lodged direct to your property management system.</p>
           <div class="svc-foot">
-            <div class="svc-price">Trade-in<b>$100 off</b></div>
-            <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+            <span class="svc-meta">Audit-ready records</span>
+            <div class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
           </div>
         </div>
-      </article>
-
-      <article class="svc">
-        <div class="svc-img" style="background-image:linear-gradient(180deg,transparent 40%,rgba(6,17,26,.4)),url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80')">
-          <span class="svc-tag">VBA certified</span>
-        </div>
+      </div>
+      <div class="svc">
+        <span class="svc-tag">Hot water</span>
         <div class="svc-body">
-          <h3>Gas-safety inspections</h3>
-          <p>Annual compliance, real-estate certificates, leak detection. Reports filed electronically within 24 hours.</p>
+          <h3>Hot water replacement</h3>
+          <p>Failed unit on a Friday afternoon? Stocked common sizes on the truck, replaced same-day. Owner gets a quote with options before we proceed.</p>
           <div class="svc-foot">
-            <div class="svc-price">From<b>$149</b></div>
-            <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+            <span class="svc-meta">Quoted before install</span>
+            <div class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
           </div>
         </div>
-      </article>
-
-      <article class="svc">
-        <div class="svc-img" style="background-image:linear-gradient(180deg,transparent 40%,rgba(6,17,26,.4)),url('https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80')">
-          <span class="svc-tag">Fixed price</span>
-        </div>
+      </div>
+      <div class="svc">
+        <span class="svc-tag">Drainage</span>
         <div class="svc-body">
-          <h3>Taps, toilets & bathrooms</h3>
-          <p>Dripping mixer, rocking loo, shower sealing, full bathroom fit-outs. Licensed tradesmen — not handymen.</p>
+          <h3>CCTV &amp; drain clearing</h3>
+          <p>Recurring blockage? CCTV inspection with footage you can show the owner. Tree-root cuts, hydro-jetting, root-cause fixes — not just the symptom.</p>
           <div class="svc-foot">
-            <div class="svc-price">From<b>$139</b></div>
-            <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+            <span class="svc-meta">CCTV footage included</span>
+            <div class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
           </div>
         </div>
-      </article>
-
-      <article class="svc">
-        <div class="svc-img" style="background-image:linear-gradient(180deg,transparent 40%,rgba(6,17,26,.4)),url('https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=80')">
-          <span class="svc-tag">For landlords</span>
-        </div>
+      </div>
+      <div class="svc">
+        <span class="svc-tag">Make-ready</span>
         <div class="svc-body">
-          <h3>Property management</h3>
-          <p>Annual checks, landlord reports, pre-purchase inspections. Trusted by 40+ Melbourne agencies across 1,200+ properties.</p>
+          <h3>Vacate &amp; insurance work</h3>
+          <p>End-of-lease plumbing punch lists, pre-auction tidy-ups, insurance scope documentation. We work to your timeline, your inspector, your forms.</p>
           <div class="svc-foot">
-            <div class="svc-price">From<b>$219/yr</b></div>
-            <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+            <span class="svc-meta">Scope &amp; quote, then go</span>
+            <div class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
           </div>
         </div>
-      </article>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- process -->
-<section id="process" class="process">
+<!-- PROCESS -->
+<section class="process" id="process">
   <div class="wrap">
     <div class="section-head">
       <div class="section-head-left">
-        <div class="eyebrow" style="color:var(--amber)">How it works</div>
-        <h2 class="stitle" style="color:#fff">Four steps.<br/><em style="color:var(--amber)">Panic to fixed.</em></h2>
+        <div class="eyebrow">How it works</div>
+        <h2 class="stitle">From tenant call to <em>owner-ready report.</em></h2>
       </div>
-      <p class="slead" style="color:rgba(255,255,255,.7)">Same repeatable process on every job since 2011 — that's how we hold 4.9 stars across 680+ reviews.</p>
+      <p class="slead">A four-step loop designed so the property manager touches the job exactly twice — at intake and at sign-off.</p>
     </div>
     <div class="proc-grid">
       <div class="proc" data-n="01">
         <div class="proc-n">01</div>
-        <h4>You call, we pick up</h4>
-        <p>A real plumber answers in under 20 seconds. Four questions, then we dispatch the closest van.</p>
+        <h4>You log a job</h4>
+        <p>Email, portal, or one tap from your PMS. We acknowledge in minutes — never a black hole. Or send the tenant straight to our hotline; we'll loop you in.</p>
       </div>
       <div class="proc" data-n="02">
         <div class="proc-n">02</div>
-        <h4>We arrive in 45 min</h4>
-        <p>You get a text with the tech's name, photo, van rego and live ETA. Van stocked for 95% of same-day fixes.</p>
+        <h4>We attend &amp; assess</h4>
+        <p>Tenant booked direct (we handle the calls), licensed plumber on site within the agreed window, photos and scope documented before any work begins.</p>
       </div>
       <div class="proc" data-n="03">
         <div class="proc-n">03</div>
-        <h4>Fixed-price quote, then work</h4>
-        <p>Diagnosed, quoted in writing, approved — then we start. The price you see is the price you pay.</p>
+        <h4>Quote or fix on the spot</h4>
+        <p>Under your authorisation limit? Done. Over? Quote in your inbox before we touch a tool, with photos, options, and a recommended path.</p>
       </div>
       <div class="proc" data-n="04">
         <div class="proc-n">04</div>
-        <h4>Photo report + 12-mo warranty</h4>
-        <p>Every job logged in SafetyCulture with before/after photos. Emailed to you for insurance or records.</p>
+        <h4>Report &amp; invoice</h4>
+        <p>Owner-ready PDF report with photos, scope, parts, and warranty. Invoice to the agency or owner — your call. Closed in 24 hours, every job.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- testimonials -->
-<section id="reviews" class="t-sec">
+<!-- TESTIMONIALS -->
+<section class="t-sec" id="testimonials">
   <div class="wrap">
     <div class="section-head">
       <div class="section-head-left">
-        <div class="eyebrow">Real jobs, real reviews</div>
-        <h2 class="stitle">What Melbourne<br/>keeps telling us.</h2>
+        <div class="eyebrow">What property managers say</div>
+        <h2 class="stitle">The contractor calls <em>actually getting returned.</em></h2>
       </div>
-      <p class="slead">Verified reviews from Google, ProductReview, and our own 12-month follow-up survey. Names and suburbs intact.</p>
+      <p class="slead">Anonymised quotes from real Melbourne property managers we work with. Full references available on request.</p>
     </div>
-
     <div class="t-grid">
-      <article class="t-card big">
+      <div class="t-card big">
         <div class="t-stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="t-quote">"Burst pipe under the kitchen, 11pm Saturday. Arrived in <em>38 minutes</em>, stayed calm, fixed it properly and photo-documented everything for insurance. Honestly, the best tradie experience we've ever had."</p>
+        <div class="t-quote">"They're the only plumber on our panel I never have to <em>chase</em>. Job goes out, photos and invoice come back the same day. I forward the report to the owner and move on."</div>
         <div class="t-auth">
-          <div class="t-avatar" style="background:#ff3b1f">PM</div>
+          <div class="t-avatar">SK</div>
           <div>
-            <div class="t-auth-name">Priya M.</div>
-            <div class="t-auth-loc">Hawthorn · Emergency burst pipe · Jan 2026</div>
+            <div class="t-name">Sarah K.</div>
+            <div class="t-role">Senior PM · Inner-east agency, 280 properties</div>
           </div>
         </div>
-      </article>
-
-      <article class="t-card">
+      </div>
+      <div class="t-card">
         <div class="t-stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="t-quote">"Third plumber we tried. Only team to actually CCTV the drain before quoting — turned out to be tree roots, not the blockage three others guessed at. $89 to fix it properly."</p>
+        <div class="t-quote">"Tenant called them at 11pm with a burst flexi. Plumber on site in 40 minutes, my phone never rang. Report in my inbox by 8am."</div>
         <div class="t-auth">
-          <div class="t-avatar" style="background:#16283a">DR</div>
+          <div class="t-avatar">MR</div>
           <div>
-            <div class="t-auth-name">Daniel R.</div>
-            <div class="t-auth-loc">Brunswick East · Blocked drain</div>
+            <div class="t-name">Marcus R.</div>
+            <div class="t-role">Property Manager · Bayside</div>
           </div>
         </div>
-      </article>
-
-      <article class="t-card">
+      </div>
+      <div class="t-card">
         <div class="t-stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 18 5 22 7 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="t-quote">"40+ jobs across our rental portfolio. Consistent pricing, gas certs turned around same day, detailed reports every time. Never going back."</p>
+        <div class="t-quote">"Compliance run for 60 properties — gas, smoke, backflow — done in three weeks with certificates lodged. Saved me about 40 hours of admin."</div>
         <div class="t-auth">
-          <div class="t-avatar" style="background:#ffb540;color:#06111a">JL</div>
+          <div class="t-avatar">JT</div>
           <div>
-            <div class="t-auth-name">Jess L. · Property Manager</div>
-            <div class="t-auth-loc">Richmond · 3-year ongoing contract</div>
+            <div class="t-name">Jess T.</div>
+            <div class="t-role">Department Head · Northern suburbs</div>
           </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- guarantee -->
-<section id="guarantee" class="gsec">
-  <div class="wrap g-wrap">
-    <div class="g-visual">
-      <div class="g-seal">
-        <div class="g-seal-inner">
-          <b>12</b>
-          <span>Month Warranty</span>
         </div>
       </div>
     </div>
-    <div>
-      <div class="eyebrow">Our promise</div>
-      <h2 class="stitle">Four guarantees.<br/><em>Put them on the fridge.</em></h2>
-      <ul class="g-list">
-        <li><span class="g-check"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><b>45-minute arrival</b> across inner Melbourne — or we take $50 off your invoice, automatically.</span></li>
-        <li><span class="g-check"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><b>Fixed-price quote</b> before we start. The number we tell you is the number you pay. Full stop.</span></li>
-        <li><span class="g-check"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><b>12-month workmanship warranty</b> on every repair. Re-fixed free if it fails.</span></li>
-        <li><span class="g-check"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><b>Photo-documented job reports</b> emailed within 24 hours — useful for insurance, body corp, or your records.</span></li>
-      </ul>
-    </div>
   </div>
 </section>
 
-<!-- trust logos -->
-<section class="trust-sec">
+<!-- COVERAGE -->
+<section class="cov" id="coverage">
   <div class="wrap">
-    <div class="eyebrow" style="color:var(--amber)">We supply & service</div>
-    <h2 class="stitle" style="color:#fff;max-width:800px">Industry-accredited. <em style="color:var(--amber)">Trade-preferred.</em></h2>
-    <div class="trust-logos">
-      <span>Reece</span>
-      <span>Rheem</span>
-      <span>Rinnai</span>
-      <span>Caroma</span>
-      <span>Bosch</span>
-      <span>Master Plumbers</span>
+    <div class="cov-grid">
+      <div>
+        <div class="eyebrow">Coverage</div>
+        <h2 class="stitle">All of <em>Melbourne metro.</em></h2>
+        <p class="slead" style="margin-top:24px">From Werribee to Lilydale, Craigieburn to Frankston. Multiple trucks, dispatched from depots across the metro for true 45-minute response.</p>
+        <div class="cov-list">
+          <span>Inner city</span>
+          <span>Bayside</span>
+          <span>Inner east</span>
+          <span>Inner west</span>
+          <span>Inner north</span>
+          <span>Outer east</span>
+          <span>Outer west</span>
+          <span>Outer north</span>
+          <span>South-east</span>
+          <span>Mornington Pen.</span>
+          <span>Yarra Valley</span>
+          <span>Geelong (selected)</span>
+        </div>
+      </div>
+      <div class="cov-map" aria-hidden="true">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="ringGrad">
+              <stop offset="0%" stop-color="#3fb6ef" stop-opacity=".5"/>
+              <stop offset="100%" stop-color="#3fb6ef" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(63,182,239,.15)" stroke-width="1"/>
+          <circle cx="200" cy="200" r="130" fill="none" stroke="rgba(63,182,239,.22)" stroke-width="1"/>
+          <circle cx="200" cy="200" r="80" fill="none" stroke="rgba(63,182,239,.3)" stroke-width="1"/>
+          <circle cx="200" cy="200" r="180" fill="url(#ringGrad)"/>
+          <!-- depot pins -->
+          <g fill="#3fb6ef">
+            <circle cx="200" cy="200" r="6"/>
+            <circle cx="120" cy="160" r="4"/>
+            <circle cx="280" cy="140" r="4"/>
+            <circle cx="100" cy="240" r="4"/>
+            <circle cx="290" cy="260" r="4"/>
+            <circle cx="200" cy="310" r="4"/>
+            <circle cx="190" cy="100" r="4"/>
+          </g>
+          <text x="200" y="360" fill="rgba(255,255,255,.5)" font-size="13" text-anchor="middle" font-family="Inter Tight,sans-serif" letter-spacing="2">MELBOURNE METRO</text>
+        </svg>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- faq -->
-<section id="faq" class="faq-sec">
-  <div class="wrap faq-wrap">
-    <div>
-      <div class="eyebrow">Common questions</div>
-      <h2 class="stitle">No-BS <em>answers.</em></h2>
-      <p class="slead" style="margin-top:22px">Not listed? Call <strong>(03) 9000 0000</strong> — a real plumber picks up, 24/7. No voicemail, no robots.</p>
-    </div>
-    <div class="faq-list">
-      <details class="faq-item" open>
-        <summary>Do you actually arrive in 45 minutes, or is that marketing?<span class="faq-plus"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
-        <p>Across inner Melbourne (Port Phillip, Yarra, Boroondara, Stonnington, Glen Eira, Moreland, Darebin) our average is 38 minutes. If we pass 45, your invoice is $50 less — automatically. We don't need you to ask.</p>
-      </details>
-      <details class="faq-item">
-        <summary>What's the call-out fee?<span class="faq-plus"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
-        <p>Zero. No fuel surcharge, no weekend loading, no after-hours levy. You pay for the job, not for us turning up. If you don't like the quote, we leave — you owe nothing.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Are you licensed for gas work?<span class="faq-plus"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
-        <p>Yes — fully licensed by the Victorian Building Authority (VBA licence 45821). All gas work is certified, logged in our SafetyCulture system, and compliance certificates issued within 24 hours of the job.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Do you handle strata / body corporate work?<span class="faq-plus"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
-        <p>Yes — we hold ongoing contracts with 40+ property management firms across Melbourne. Itemised invoicing, multi-unit quoting, compliance reporting all handled as standard. Ask for our property manager pack.</p>
-      </details>
-      <details class="faq-item">
-        <summary>What if the problem comes back?<span class="faq-plus"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
-        <p>If it fails inside 12 months for the same issue, we come back free. No quibbling, no excess, no "well, technically." The warranty is written on your invoice.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Weekends and public holidays?<span class="faq-plus"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
-        <p>24 hours, 7 days, every public holiday — including Christmas Day. Same rates. Same guarantee. Same on-call team. No subcontractors.</p>
-      </details>
-    </div>
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="cta-wave" aria-hidden="true">
+    <svg viewBox="0 0 1600 400" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-50,260 C 220,80 480,60 800,160 C 1140,270 1340,340 1700,200"
+            fill="none" stroke="url(#waveGrad)" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+      <path d="M-50,300 C 240,120 500,100 820,200 C 1160,310 1360,380 1700,240"
+            fill="none" stroke="url(#waveGrad)" stroke-width="2" stroke-linecap="round" opacity=".35"/>
+    </svg>
   </div>
-</section>
-
-<!-- final CTA -->
-<section id="book" class="final">
-  <div class="wrap">
-    <div class="final-ey"><span class="dot"></span>Lines open · Real plumber answering</div>
-    <h2>Got a leak, a blockage,<br/>or a <em>bad feeling?</em></h2>
-    <p>Call Melbourne's highest-rated emergency plumbers. One ring gets you a real, licensed tradesman — average answer time 18 seconds.</p>
-    <div class="final-ctas">
-      <a href="tel:+61390000000" class="btn btn-red">
+  <div class="wrap cta-inner">
+    <h2>Get us on your <em>contractor panel.</em></h2>
+    <p>Five-minute onboarding. We send you our trade docs, insurance, licences, and rate card. You decide if we're the right fit. No commitment, no pressure.</p>
+    <div class="cta-btns">
+      <a href="mailto:brendan@urbantideplumbing.com.au?subject=Add%20Urban%20Tide%20to%20our%20panel" class="btn btn-blue">
+        Email our trade pack
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:+61300000000" class="btn btn-ghost">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Call (03) 9000 0000
+        Talk to Brendan direct
       </a>
-      <a href="mailto:hello@urbantideplumbing.com.au" class="btn btn-ghost-w">
-        Email us
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </a>
-    </div>
-    <div class="final-phone">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      <a href="tel:+61390000000">(03) 9000 0000</a>
     </div>
   </div>
 </section>
 
-<!-- footer -->
+<!-- FOOTER -->
 <footer>
   <div class="wrap">
-    <div class="f-grid">
-      <div class="f-brand">
-        <div class="logo">
-          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 6 5 9 5 14a7 7 0 0 0 14 0c0-5-3-8-7-12z"/></svg></span>
-          <span class="logo-txt">Urban Tide<small>Plumbing · Est. 2011</small></span>
-        </div>
-        <p>Melbourne's most-booked residential emergency plumbers. Licensed, insured, family-run. 14 years in, 12,400+ jobs deep.</p>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo">
+          <img src="logo.jpg" alt="Urban Tide Plumbing" />
+          <div class="logo-txt">URBAN TIDE<small>Plumbing</small></div>
+        </a>
+        <p>Melbourne's plumbing partner for property managers, real estate agencies, and asset owners. Licensed, insured, and built to make your job easier.</p>
       </div>
-      <div>
-        <h5>Services</h5>
+      <div class="foot-col">
+        <div class="foot-h">Services</div>
         <ul>
-          <li><a href="#services">Emergency leaks</a></li>
-          <li><a href="#services">Blocked drains</a></li>
-          <li><a href="#services">Hot water systems</a></li>
-          <li><a href="#services">Gas-safety inspections</a></li>
-          <li><a href="#services">Taps & bathrooms</a></li>
-          <li><a href="#services">Property management</a></li>
+          <li><a href="#services">Tenant maintenance</a></li>
+          <li><a href="#services">Emergency response</a></li>
+          <li><a href="#services">Compliance</a></li>
+          <li><a href="#services">Hot water</a></li>
+          <li><a href="#services">Drainage &amp; CCTV</a></li>
         </ul>
       </div>
-      <div>
-        <h5>Service area</h5>
+      <div class="foot-col">
+        <div class="foot-h">For agencies</div>
         <ul>
-          <li>Hawthorn · Kew · Camberwell</li>
-          <li>Richmond · Fitzroy · Collingwood</li>
-          <li>Brunswick · Carlton · Northcote</li>
-          <li>South Yarra · Toorak · Prahran</li>
-          <li>Caulfield · St Kilda · Elwood</li>
-          <li>Glen Iris · Malvern · Armadale</li>
+          <li><a href="#why">Why Urban Tide</a></li>
+          <li><a href="#process">How it works</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#coverage">Coverage area</a></li>
+          <li><a href="#cta">Trade pack</a></li>
         </ul>
       </div>
-      <div>
-        <h5>Contact</h5>
+      <div class="foot-col">
+        <div class="foot-h">Contact</div>
         <ul>
-          <li><a href="tel:+61390000000">(03) 9000 0000</a></li>
-          <li><a href="mailto:hello@urbantideplumbing.com.au">hello@urbantideplumbing<br/>.com.au</a></li>
-          <li>Unit 4, 12 Tide Lane<br/>Richmond VIC 3121</li>
-          <li>VBA Licence 45821</li>
-          <li>ABN 46 123 456 789</li>
+          <li><a href="tel:+61300000000">1300 000 000</a></li>
+          <li><a href="mailto:brendan@urbantideplumbing.com.au">brendan@urbantideplumbing.com.au</a></li>
+          <li>24/7 agency hotline</li>
+          <li>Melbourne metro</li>
         </ul>
       </div>
     </div>
-    <div class="f-bottom">
-      <div>© 2026 Urban Tide Plumbing Pty Ltd. All rights reserved.</div>
-      <div>Family-run · Fully licensed · $20M public liability · Master Plumbers Association member</div>
+    <div class="foot-bot">
+      <div class="foot-bot-l">
+        <span>© 2026 Urban Tide Plumbing</span>
+        <span>·</span>
+        <span>Lic. 51234 · ABN 12 345 678 901</span>
+      </div>
+      <div class="foot-bot-l">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<!-- sticky mobile call -->
-<div class="mcall">
-  <strong><span class="dot" style="background:#fff"></span>24/7 · (03) 9000 0000</strong>
-  <a href="tel:+61390000000">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    Call now
-  </a>
-</div>
-
 <script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 120) nav.classList.add('stuck');
-  else nav.classList.remove('stuck');
-});
+// sticky nav
+const nav = document.querySelector('nav.main');
+const onScroll = () => nav.classList.toggle('stuck', window.scrollY > 80);
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
 </script>
-
 </body>
 </html>
