@@ -67,11 +67,12 @@ nav.main.stuck{padding:12px 0;background:rgba(251,248,242,.96);box-shadow:0 4px 
 nav.main .wrap{display:flex;align-items:center;justify-content:space-between;gap:40px}
 .logo{display:flex;align-items:center;gap:13px;color:var(--ink)}
 .logo img{
-  width:46px;height:46px;border-radius:11px;object-fit:cover;
-  background:#fff;padding:3px;
-  box-shadow:0 6px 22px -8px rgba(14,95,160,.35),0 0 0 1px rgba(14,95,160,.12);
-  transition:transform .35s var(--ease);
+  width:48px;height:48px;border-radius:11px;object-fit:cover;
+  background:var(--ink);padding:4px;
+  box-shadow:0 10px 28px -8px rgba(10,24,48,.55),0 0 0 1px rgba(10,24,48,.18);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease);
 }
+.logo:hover img{box-shadow:0 14px 36px -8px rgba(14,95,160,.6),0 0 0 1px rgba(14,95,160,.4)}
 .logo:hover img{transform:translateY(-2px) rotate(-2deg)}
 .logo-txt{font-family:var(--sans);font-weight:800;font-size:19px;letter-spacing:-.02em;line-height:1.05}
 .logo-txt small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--tide);margin-top:5px}
@@ -693,12 +694,16 @@ footer::before{
   <div class="wrap">
     <div class="partners-label">A few of the agencies we work with</div>
     <div class="partners-row">
+      <div class="partner">O'Brien Real Estate</div>
       <div class="partner">Barry Plant</div>
       <div class="partner">Ray White</div>
       <div class="partner">Buxton</div>
-      <div class="partner">Hocking Stuart</div>
-      <div class="partner">Stockdale &amp; Leggo</div>
+      <div class="partner">Grants Estate Agents</div>
+      <div class="partner">Jellis Craig</div>
+      <div class="partner">McGrath</div>
       <div class="partner">Harcourts</div>
+      <div class="partner">Century 21</div>
+      <div class="partner">Hardings Property</div>
     </div>
   </div>
 </section>
